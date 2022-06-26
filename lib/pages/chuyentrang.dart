@@ -1,4 +1,4 @@
-/*import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 class ChuyenTrang extends StatelessWidget{
   final String chuyentrang;
   ChuyenTrang(this.chuyentrang);
@@ -11,4 +11,4 @@ class ChuyenTrang extends StatelessWidget{
       ),
     );
   }
-}*/
+}

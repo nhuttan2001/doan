@@ -1,4 +1,4 @@
-/*import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import './chuyentrang.dart ';
 
 class HomePage extends StatefulWidget{
@@ -59,4 +59,4 @@ class _HomePageState extends State<HomePage>{
       )
     );
   }
-}*/
+}
