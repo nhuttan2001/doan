@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
+import './chuyentrang.dart ';
 
 class HomePage extends StatefulWidget{
   @override
@@ -16,14 +17,15 @@ class _HomePageState extends State<HomePage>{
             new UserAccountsDrawerHeader(
                accountName: new Text("Nguyễn Nhựt Tân"), 
                accountEmail: new Text("0306191360@caothang.edu.vn"),
-               /*decoration: new BoxDecoration(
+               decoration: new BoxDecoration(
                 image: new DecorationImage(
                   image: new NetworkImage("https://meta.vn/Data/image/2022/01/13/anh-dep-thien-nhien-3.jpg")
                 )
-               ),*/
+               ),
             ),
             new ListTile(
               title: new Text("Trang Chính"),
+              onTap: () => Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => new ChuyenTrang("Trang Chính"))),
             ),
              new ListTile(
               title: new Text("Khoa CNTT"),
@@ -49,10 +51,6 @@ class _HomePageState extends State<HomePage>{
               title: new Text("Học Phí"),
              
             ),
-             new ListTile(
-              title: new Text("Đăng nhập/Đăng xuất"),
-             
-            ),
           ],
         ),
       ),
@@ -61,4 +59,4 @@ class _HomePageState extends State<HomePage>{
       )
     );
   }
-}
+}*/
