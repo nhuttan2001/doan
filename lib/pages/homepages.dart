@@ -1,5 +1,8 @@
+import 'package:doan/model/lovenews.dart';
+import 'package:doan/pages/chuyentrang.dart';
 import 'package:flutter/material.dart';
-import './chuyentrang.dart ';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'dart:async';
 
 class HomePage extends StatefulWidget{
   @override
@@ -8,55 +11,72 @@ class HomePage extends StatefulWidget{
 class _HomePageState extends State<HomePage>{
   @override
   Widget build(BuildContext context){
-    return new Scaffold(
-      appBar: new AppBar(title: new Text("My Drawer app"),),
+    return Scaffold(
+      appBar:  AppBar(title: const Text("Danh Mục"),),
+      // ignore: unnecessary_new
       drawer:new Drawer(
-       child: new ListView(
+       child:  ListView(
 
           children: <Widget>[
-            new UserAccountsDrawerHeader(
-               accountName: new Text("Nguyễn Nhựt Tân"), 
-               accountEmail: new Text("0306191360@caothang.edu.vn"),
+             UserAccountsDrawerHeader(
+               accountName: const Text("Nguyễn Nhựt Tân"), 
+               accountEmail: const Text("0306191360@caothang.edu.vn"),
                decoration: new BoxDecoration(
-                image: new DecorationImage(
+                image:  DecorationImage(
                   image: new NetworkImage("https://meta.vn/Data/image/2022/01/13/anh-dep-thien-nhien-3.jpg")
-                )
+                ),
                ),
             ),
-            new ListTile(
-              title: new Text("Trang Chính"),
-              onTap: () => Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => new ChuyenTrang("Trang Chính"))),
+             ListTile(
+              title: const Text("Trang Chính"),
+              onTap:(){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Chuyentrang()));
+              },
             ),
-             new ListTile(
-              title: new Text("Khoa CNTT"),
-              
+              ListTile(
+              title: const Text("Khoa CNTT"),
+              onTap:(){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Chuyentrang()));
+              },
             ),
-             new ListTile(
+              ListTile(
               title: new Text("Đào tạo"),
+              onTap:(){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Chuyentrang()));},
              
             ),
-             new ListTile(
+              ListTile(
               title: new Text("CTCT-HSSV"),
+              onTap:(){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Chuyentrang()));},
               
             ),
-             new ListTile(
-              title: new Text("Đoàn Thanh Niên"),
+              ListTile(
+              title: const Text("Đoàn Thanh Niên"),
+              onTap:(){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Chuyentrang()));},
            
             ),
-             new ListTile(
-              title: new Text("Học bổng - vay vốn"),
+              ListTile(
+              title: const Text("Học bổng - vay vốn"),
+              onTap:(){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Chuyentrang()));},
             
             ),
-             new ListTile(
-              title: new Text("Học Phí"),
+              ListTile(
+              title: const Text("Học Phí"),
+              onTap:(){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Chuyentrang()));},
              
             ),
           ],
         ),
       ),
       body: new Center(
-        child: new Text("HomePage"),
-      )
+          child: Column(children: [
+            Image.asset('images/1.jpg')
+          ],)
+          ),      
     );
   }
 }
