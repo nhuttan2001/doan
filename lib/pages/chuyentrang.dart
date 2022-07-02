@@ -1,6 +1,8 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/material.dart';
+// ignore_for_file: unused_import, prefer_const_constructors
 
+import 'package:cloud_firestore/cloud_firestore.dart' show FirebaseFirestore, QuerySnapshot;
+import 'package:flutter/material.dart';
+import 'package:doan/pages/news.dart';
 
 class Chuyentrang extends StatelessWidget {
   const Chuyentrang({Key? key}) : super(key: key);
@@ -9,7 +11,7 @@ class Chuyentrang extends StatelessWidget {
   Widget build(BuildContext context) {
     final Stream<QuerySnapshot> news = FirebaseFirestore.instance.collection('Baivietyeuthich').snapshots();
     return  Scaffold(
-      appBar:  AppBar(title: const  Text ('abc'),),
+      appBar:  AppBar(title: const  Text ('Trang Chủ'),),
       body: Center(child:  
         
            StreamBuilder<QuerySnapshot>(
@@ -22,12 +24,14 @@ class Chuyentrang extends StatelessWidget {
                 return const  Text('Loading');
               }
               final data = snapshot.requireData;
-              return ListView.builder(itemCount: data.size,itemBuilder: (context,index){
-                return ListTile(title: Text(data.docs[index].id),leading: Text(data.docs[index]['tenbaiviet']),subtitle:Text(data.docs[index]['noidung']) ,);
+              return ListView.separated(separatorBuilder: (BuildContext context, int index) => const Divider(),itemCount: data.size,itemBuilder: (context,index){
+                // ignore: prefer_const_literals_to_create_immutables
+                return Stack(children: [               
+                   Positioned(child: Image(width: 200,image: AssetImage('images/1.jpg'))),
+                ],);
               },);
             },
-          ),
-      )
-    );
+                ),
+      ),);
   }
 }
